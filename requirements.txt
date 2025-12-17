@@ -1,5 +1,3 @@
-aiogram==2.25.1
-
 from aiogram import Bot, Dispatcher, executor, types
 
 TOKEN = "8482154609:AAEkySCZu6FDQXqDz87m__XLsMYWZJMNtt8"
