@@ -1,14 +1,21 @@
 aiogram==2.25.1
 from aiogram import Bot, Dispatcher, executor, types
+import os
+from dotenv import load_dotenv
 
-TOKEN = "8482154609:AAEkySCZu6FDQXqDz87m__XLsMYWZJMNtt8"
+load_dotenv()
+
+TOKEN = os.getenv("8482154609:AAEkySCZu6FDQXqDz87m__XLsMYWZJMNtt8")
+
+if not TOKEN:
+    raise ValueError("No TELEGRAM_BOT_TOKEN found in environment variables")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    await message.answer("Привет! Я бот поддержки 😊")
+    await message.answer("Hello! I am a support bot 😊")
 
 if __name__ == "__main__":
     executor.start_polling(dp)
