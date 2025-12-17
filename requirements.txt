@@ -1,13 +1,2 @@
-from aiogram import Bot, Dispatcher, executor, types
-
-TOKEN = "8482154609:AAEkySCZu6FDQXqDz87m__XLsMYWZJMNtt8"
-
-bot = Bot(token=TOKEN)
-dp = Dispatcher(bot)
-
-@dp.message_handler(commands=['start'])
-async def start(message: types.Message):
-    await message.answer("Привет! Я бот поддержки 😊")
-
-if __name__ == "__main__":
-    executor.start_polling(dp)
+aiogram==2.25.1
+python-dotenv==1.0.0
